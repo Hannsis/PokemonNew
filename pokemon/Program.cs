@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 
@@ -110,6 +111,13 @@ namespace Pokemon
 
                         string attackList = "";
                         Console.WriteLine("Pick a move, or run away");
+                       
+                        Random attack = new Random();
+                        List<int> attackStats = new();
+                        attackStats.Add(attack.Next(1, 25));//normal
+                        attackStats.Add(attack.Next(1, 50));//crit chance
+                       
+                       
 
                         while (attackList != "5")
                         {
@@ -153,6 +161,29 @@ namespace Pokemon
 
 
                             }
+                            if (attackList == "1")
+                            {
+                                Console.WriteLine("yolo");
+                                Console.WriteLine($"\r\nThe attack gave {attackStats[1]} damage");
+                            }
+                            else if (attackList == "2")
+                            {
+                                Console.WriteLine("yolo");
+                                Console.WriteLine($"\r\nThe attack gave {attackStats[1]} damage");
+                            }
+                            else if (attackList == "3")
+                            {
+                                Console.WriteLine("yolo");
+                                Console.WriteLine($"\r\nThe attack gave {attackStats[1]} damage");
+                            }
+                            else if (attackList == "4")
+                            {
+                                Console.WriteLine("yolo");
+                                Console.WriteLine($"\r\nThe attack gave {attackStats[1]} damage");
+                            }
+                            else
+                                break;
+
 
                         }
                     }
