@@ -25,7 +25,7 @@ namespace Pokemon
                 $"\n\n3. {pokemon[2]} has 39 HP, is a fire type pokémon, its attacks are: \ngrown \nscratch \nember \nand leer!" +
                 $"\n\n4. {pokemon[3]} is a water type pokémon, it has 44 HP! And it's attacks are: \nTackle, \nwatergun, \ntailwhip \nand bubble!");
 
-            ChoosePokemon(pokemon);
+            ChoosePokemon(pokemon[]);
 
             while (PlayGame)
             {
@@ -78,7 +78,7 @@ namespace Pokemon
         }
 
 
-        static void ChoosePokemon(string pokemon)
+        public string ChoosePokemon(string pokemon)
         {
             string pokemonChoice = Console.ReadLine();
 
@@ -87,23 +87,27 @@ namespace Pokemon
             {
                 case "1":
                     Console.WriteLine($"You have chosen {pokemon[0]}");
-
+                    return pokemon;
                     break;
                 case "2":
                     Console.WriteLine($"You have chosen {pokemon[1]}");
+                    return pokemon;
                     break;
                 case "3":
                     Console.WriteLine($"You have chosen {pokemon[2]}");
+                    return pokemon;
                     break;
                 case "4":
                     Console.WriteLine($"You have chosen {pokemon[3]}");
+                    return pokemon;
 
                     break;
                 default:
                     Console.WriteLine("It's dangerous to go alone, please bring a pokémon!");
+                    return pokemon;
                     break;
 
-                    return pokemon;
+                    
             }
         }
         static void SquirtleAttacks()
