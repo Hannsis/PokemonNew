@@ -24,8 +24,9 @@ namespace Pokemon
                 $"\n\n2. {pokemon[1]} has 44 HP, is a grass type pokémon, its attacks are: \ntackle \nleech seed \nvine whip \nand growl!" +
                 $"\n\n3. {pokemon[2]} has 39 HP, is a fire type pokémon, its attacks are: \ngrown \nscratch \nember \nand leer!" +
                 $"\n\n4. {pokemon[3]} is a water type pokémon, it has 44 HP! And it's attacks are: \nTackle, \nwatergun, \ntailwhip \nand bubble!");
-            
-            
+
+            ChoosePokemon(pokemon);
+
             while (PlayGame)
             {
 
@@ -39,14 +40,7 @@ namespace Pokemon
                 while (attackChoice != "5")
                 {
 
-                    Console.WriteLine();
-
-                    Console.WriteLine("Vilken attack vill du välja?");
-                    Console.WriteLine("1. TACKLE");
-                    Console.WriteLine("2. BUBBLE");
-                    Console.WriteLine("3. WATERGUN");
-                    Console.WriteLine("4. TAIL WHIP");
-                    Console.WriteLine("5. RUN (Avsluta programmet)");
+                    SquirtleAttacks();
 
                     attackChoice = Console.ReadLine();
 
@@ -80,39 +74,51 @@ namespace Pokemon
                 }
 
             }
-           
-        }
 
         }
-        public string ChosePokemon(string pokemon)
+
+
+        static void ChoosePokemon(string pokemon)
         {
-        string pokemonChoice = Console.ReadLine();
+            string pokemonChoice = Console.ReadLine();
 
-        switch (pokemonChoice)
+            switch (pokemonChoice)
 
-        {
-            case "1":
-                Console.WriteLine($"You have chosen {pokemon[0]}");
+            {
+                case "1":
+                    Console.WriteLine($"You have chosen {pokemon[0]}");
 
-                break;
-            case "2":
-                Console.WriteLine($"You have chosen {pokemon[1]}");
-                break;
-            case "3":
-                Console.WriteLine($"You have chosen {pokemon[2]}");
-                break;
-            case "4":
-                Console.WriteLine($"You have chosen {pokemon[3]}");
+                    break;
+                case "2":
+                    Console.WriteLine($"You have chosen {pokemon[1]}");
+                    break;
+                case "3":
+                    Console.WriteLine($"You have chosen {pokemon[2]}");
+                    break;
+                case "4":
+                    Console.WriteLine($"You have chosen {pokemon[3]}");
 
-                break;
-            default:
-                Console.WriteLine("It's dangerous to go alone, please bring a pokémon!");
-                break;
+                    break;
+                default:
+                    Console.WriteLine("It's dangerous to go alone, please bring a pokémon!");
+                    break;
 
-           return pokemon;
+                    return pokemon;
+            }
         }
+        static void SquirtleAttacks()
+        {
+            Console.WriteLine();
+
+            Console.WriteLine("Vilken attack vill du välja?");
+            Console.WriteLine("1. TACKLE");
+            Console.WriteLine("2. BUBBLE");
+            Console.WriteLine("3. WATERGUN");
+            Console.WriteLine("4. TAIL WHIP");
+            Console.WriteLine("5. RUN (Avsluta programmet)");
+        }
+
+
     }
-
-    
 }
   
